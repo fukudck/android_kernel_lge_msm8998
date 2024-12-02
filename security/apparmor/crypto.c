@@ -59,7 +59,7 @@ char *aa_calc_hash(void *data, size_t len)
 
 fail:
 	kfree(hash);
-	return NULL;
+	return ERR_PTR(error);
 }
 
 int aa_calc_profile_hash(struct aa_profile *profile, u32 version, void *start,
